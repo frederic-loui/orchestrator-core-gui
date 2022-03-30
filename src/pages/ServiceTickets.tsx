@@ -13,7 +13,7 @@ import {
     EuiPage,
     EuiPageBody,
     EuiPanel,
-    EuiSpacer
+    EuiSpacer,
 } from "@elastic/eui";
 import LabelledFilter from "custom/components/LabelledFilter";
 import debounce from "lodash/debounce";
@@ -399,12 +399,12 @@ class ServiceTickets extends React.PureComponent<IProps, IState> {
                                 </EuiFlexItem>
                                 <EuiFlexItem grow={false} style={{ minWidth: 200 }}>
                                     <EuiButton
-                                            color={"primary"}
-                                            iconType="plusInCircle"
-                                            isDisabled={false}
-                                            size="m"
-                                            fill
-                                            onClick={() => {}}
+                                        color={"primary"}
+                                        iconType="plusInCircle"
+                                        isDisabled={false}
+                                        size="m"
+                                        fill
+                                        onClick={() => {}}
                                     >
                                         {intl.formatMessage({ id: "tickets.new_ticket" })}
                                     </EuiButton>
@@ -415,61 +415,61 @@ class ServiceTickets extends React.PureComponent<IProps, IState> {
                     </div>
                     <table className="prefixes">
                         <thead>
-                        <tr>{columns.map((column, index) => th(index))}</tr>
+                            <tr>{columns.map((column, index) => th(index))}</tr>
                         </thead>
                         <tbody>
-                        {sortedPrefixes.map((prefix) => (
-                            <tr key={prefix.id} className={ipamStates[prefix.state] ?? ""}>
-                                <td
-                                    data-label={intl.formatMessage({ id: "prefixes.customer" })}
-                                    className="customer"
-                                >
-                                    {prefix.customer}
-                                </td>
-                                <td
-                                    data-label={intl.formatMessage({ id: "prefixes.subscription_id" })}
-                                    className="subscription"
-                                >
-                                    <a
-                                        href={`${getLink(prefix, this.state.ipPrefixProductId)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                            {sortedPrefixes.map((prefix) => (
+                                <tr key={prefix.id} className={ipamStates[prefix.state] ?? ""}>
+                                    <td
+                                        data-label={intl.formatMessage({ id: "prefixes.customer" })}
+                                        className="customer"
                                     >
-                                        {prefix.subscription_id.substring(0, 8)}
-                                    </a>
-                                </td>
-                                <td
-                                    data-label={intl.formatMessage({ id: "prefixes.description" })}
-                                    className="description"
-                                >
-                                    {prefix.description}
-                                </td>
-                                <td data-label={intl.formatMessage({ id: "prefixes.family" })} className="family">
-                                    {familyFullName[prefix.family]}
-                                </td>
-                                <td
-                                    data-label={intl.formatMessage({ id: "prefixes.prefixlen" })}
-                                    className="prefixlen"
-                                >
-                                    /{prefix.prefixlen}
-                                </td>
-                                <td data-label={intl.formatMessage({ id: "prefixes.prefix" })} className="prefix">
-                                    {prefix.prefix}
-                                </td>
-                                <td data-label={intl.formatMessage({ id: "prefixes.parent" })} className="parent">
-                                    {prefix.parent}
-                                </td>
-                                <td data-label={intl.formatMessage({ id: "prefixes.state" })} className="state">
-                                    {ipamStates[prefix.state]}
-                                </td>
-                                <td
-                                    data-label={intl.formatMessage({ id: "prefixes.start_date" })}
-                                    className="start_date"
-                                >
-                                    {prefix.start_date_as_str}
-                                </td>
-                            </tr>
-                        ))}
+                                        {prefix.customer}
+                                    </td>
+                                    <td
+                                        data-label={intl.formatMessage({ id: "prefixes.subscription_id" })}
+                                        className="subscription"
+                                    >
+                                        <a
+                                            href={`${getLink(prefix, this.state.ipPrefixProductId)}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {prefix.subscription_id.substring(0, 8)}
+                                        </a>
+                                    </td>
+                                    <td
+                                        data-label={intl.formatMessage({ id: "prefixes.description" })}
+                                        className="description"
+                                    >
+                                        {prefix.description}
+                                    </td>
+                                    <td data-label={intl.formatMessage({ id: "prefixes.family" })} className="family">
+                                        {familyFullName[prefix.family]}
+                                    </td>
+                                    <td
+                                        data-label={intl.formatMessage({ id: "prefixes.prefixlen" })}
+                                        className="prefixlen"
+                                    >
+                                        /{prefix.prefixlen}
+                                    </td>
+                                    <td data-label={intl.formatMessage({ id: "prefixes.prefix" })} className="prefix">
+                                        {prefix.prefix}
+                                    </td>
+                                    <td data-label={intl.formatMessage({ id: "prefixes.parent" })} className="parent">
+                                        {prefix.parent}
+                                    </td>
+                                    <td data-label={intl.formatMessage({ id: "prefixes.state" })} className="state">
+                                        {ipamStates[prefix.state]}
+                                    </td>
+                                    <td
+                                        data-label={intl.formatMessage({ id: "prefixes.start_date" })}
+                                        className="start_date"
+                                    >
+                                        {prefix.start_date_as_str}
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                     <ScrollUpButton />

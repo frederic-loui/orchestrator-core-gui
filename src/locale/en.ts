@@ -474,8 +474,8 @@ I18n.translations.en = {
         copied: "Copied!",
         copy: "Copy to clipboard",
     },
-    tickets:{
-        new_ticket:"New Service Ticket"
+    tickets: {
+        new_ticket: "New Service Ticket",
     },
     metadata: {
         tabs: {
